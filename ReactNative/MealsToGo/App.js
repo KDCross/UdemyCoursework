@@ -1,5 +1,4 @@
 import React from "react";
-import { StatusBar as ExpoStatusBar } from "expo-status-bar"; //In the course, they are using this. I intend to just use the default react native StatusBar if I can.
 import {
   Platform,
   SafeAreaView,
@@ -8,13 +7,15 @@ import {
   Text,
   View,
 } from "react-native";
+import { Searchbar } from "react-native-paper";
+import { StatusBar as ExpoStatusBar } from "expo-status-bar"; //In the course, they are using this. I intend to just use the default react native StatusBar if I can.
+import Searchbox from "./src/components/Searchbox";
 
-const isAndroid = Platform.OS === "android";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.search}>
-        <Text>Search</Text>
+      <View>
+          <Searchbox />
       </View>
       <View style={styles.list}>
         <Text>List</Text>
