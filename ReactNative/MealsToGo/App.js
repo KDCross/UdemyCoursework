@@ -1,10 +1,11 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { StatusBar as ExpoStatusBar } from 'expo-status-bar'; //In the course, they are using this. I intend to just use the default react native StatusBar if I can.
+import { Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 
+const isAndroid = Platform.OS === 'android';
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={{flex: 1, marginTop: StatusBar.currentHeight}}>
       <View style={styles.searchbox}>
         <Text>Search</Text>
       </View>
@@ -16,22 +17,15 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   searchbox: {
-    flex: 0.4,
-    paddingTop: 20,
-    paddingLeft: 8,
-    fontSize: 25,
+    flex: 0.5,
+    fontSize: 24,
     fontWeight: '500',
     backgroundColor: 'green',
   },
   list: {
     flex: 8,
-    paddingTop: 20,
-    paddingLeft: 8,
-    fontSize: 25,
+    fontSize: 24,
     fontWeight: '500',
     backgroundColor: 'blue',
   }
