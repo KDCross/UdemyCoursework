@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
       backgroundColor: "green",
     },
     list: {
-      flex: 8,
+      flex: 1,
+      padding: 12,
       fontSize: 24,
       fontWeight: "500",
       backgroundColor: "blue",
