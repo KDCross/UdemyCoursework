@@ -9,7 +9,7 @@ import {
   } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar"; //In the course, they are using this. I intend to just use the default react native StatusBar if I can.
-import { RestaurantInfo } from "../components/restauraint-info.component";
+import { RestaurantInfo } from "../components/restaurant-info.component";
 
 export const RestaurantsScreen = () => (
     <SafeAreaView style={styles.container}>
