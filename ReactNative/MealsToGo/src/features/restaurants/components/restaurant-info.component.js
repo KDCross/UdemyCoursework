@@ -5,12 +5,12 @@ import styled from "styled-components/native";
 //import { RestaurantCard } from "./restaurant-cards.js";
 
 const RestaurantCard = styled (Card)`
-  backgroundColor: white;
+  background-color: white;
   elevation: 8;
 `;
 
 const RestaurantCardCover = styled (Card.Cover)`
-  backgroundColor: white;
+  background-color: white;
 `;
 
 const Title=styled.Text`
