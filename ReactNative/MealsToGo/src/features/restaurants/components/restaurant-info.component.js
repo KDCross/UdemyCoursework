@@ -5,6 +5,7 @@ import styled from "styled-components/native";
 import Svg, { SvgXml } from "react-native-svg";
 import open from "../../../../assets/open";
 import star from "../../../../assets/star";
+import Spacer from "../../../features/restaurants/components/spacer/spacer.component";
 
 //import { RestaurantCard } from "./restaurant-cards.js";
 
@@ -45,11 +46,11 @@ const ClosedNow = styled(Text)`
   font-family: ${(props) => props.theme.fonts.body};
   font-size: ${(props) => props.theme.fontSizes.caption};
   color: ${(props) => props.theme.colors.text.error};
-  padding-right: ${(props) => props.theme.space[1]};
+  padding-right: ${(props) => props.theme.space[2]};
 `;
 
 const IconType = styled.View`
-  padding-left: ${(props) => props.theme.space[1]};
+  padding-left: ${(props) => props.theme.space[2]};
 `;
 
 const Info = styled.View`
@@ -87,7 +88,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
             {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
           </OpenNow>
           <IconType>
-            <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+            <Image style={{ width: 16, height: 16 }} source={{ uri: icon }} />
           </IconType>
         </Rating>
         <Address>{address}</Address>
