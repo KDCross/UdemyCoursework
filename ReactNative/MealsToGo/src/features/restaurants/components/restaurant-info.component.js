@@ -5,7 +5,7 @@ import styled from "styled-components/native";
 import Svg, { SvgXml } from "react-native-svg";
 import open from "../../../../assets/open";
 import star from "../../../../assets/star";
-import Spacer from "../../../features/restaurants/components/spacer/spacer.component";
+import { Spacer } from "../../../features/restaurants/components/spacer/spacer.component";
 
 //import { RestaurantCard } from "./restaurant-cards.js";
 
@@ -49,14 +49,6 @@ const ClosedNow = styled(Text)`
   padding-right: ${(props) => props.theme.space[2]};
 `;
 
-const IconType = styled.View`
-  padding-left: ${(props) => props.theme.space[2]};
-`;
-
-const Info = styled.View`
-  padding: ${(props) => props.theme.space[3]};
-`;
-
 export const RestaurantInfo = ({ restaurant = {} }) => {
   const {
     name = "Some Restaurant",
@@ -75,7 +67,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
   return (
     <RestaurantCard>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
-      <Info>
+      <Spacer position="padding" size="large">
         <Title>{name}</Title>
         <Rating>
           {ratingArray.map(() => (
@@ -87,12 +79,12 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
             </ClosedNow>
             {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
           </OpenNow>
-          <IconType>
+          <Spacer position="left" size="medium">
             <Image style={{ width: 16, height: 16 }} source={{ uri: icon }} />
-          </IconType>
+          </Spacer>
         </Rating>
         <Address>{address}</Address>
-      </Info>
+      </Spacer>
     </RestaurantCard>
   );
 };
