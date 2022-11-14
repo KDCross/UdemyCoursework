@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 
 export const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.secondary};
-  elevation: 8;
+  elevation: 5;
 `;
 
 export const RestaurantCardCover = styled(Card.Cover)`
