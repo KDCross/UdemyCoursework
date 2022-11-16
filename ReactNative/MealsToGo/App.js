@@ -17,7 +17,6 @@ import {
 } from "./src/utils/navigation";
 import {
   RestaurantsContext,
-  RestaurantsContextProvider,
 } from "./src/services/restaurants/restaurants.context";
 
 export default function App() {
