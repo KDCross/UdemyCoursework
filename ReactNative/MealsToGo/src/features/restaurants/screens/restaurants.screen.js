@@ -21,7 +21,7 @@ export const RestaurantsScreen = () => {
         <Searchbar />
       </SearchContainer>
       <FlatList
-        data={restaurantContext.restaurants}
+        data={'restaurantContext.restaurant'}
         renderItem={() => (
           <Spacer position="padding" size="medium">
             <RestaurantInfo />
