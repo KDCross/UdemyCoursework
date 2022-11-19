@@ -36,7 +36,7 @@ export const RestaurantsContextProvider = ({ children }) => {
       value={{
         restaurants,
         isLoading,
-        error,
+        error
       }}
     >
       {children}
