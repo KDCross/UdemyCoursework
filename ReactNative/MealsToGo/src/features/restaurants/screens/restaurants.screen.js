@@ -10,9 +10,7 @@ import {
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
 export const RestaurantsScreen = () => {
-  const restaurants = useContext(RestaurantsContext);
-  const isLoading = useContext(RestaurantsContext);
-  const error = useContext(RestaurantsContext);
+  const { isLoading, restaurants, error} = useContext(RestaurantsContext);
   return (
     <SafeArea>
       <SearchContainer>
@@ -20,11 +18,13 @@ export const RestaurantsScreen = () => {
       </SearchContainer>
       <FlatList
         data={restaurants}
-        renderItem={({ item }) => (
-          <Spacer position="padding" size="medium">
-            <RestaurantInfo restaurant={item} />
-          </Spacer>
-        )}
+        renderItem={({ item }) => {
+          return (
+            <Spacer position="bottom" size="large">
+              <RestaurantInfo restaurant={item} />
+            </Spacer>
+          );
+        }}
         keyExtractor={(item) => item.name}
       />
     </SafeArea>

@@ -1,4 +1,5 @@
 import React from "react";
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
 import {
   useFonts as useOswald,
@@ -15,9 +16,7 @@ import {
   Map,
   Settings,
 } from "./src/utils/navigation";
-import {
-  RestaurantsContext,
-} from "./src/services/restaurants/restaurants.context";
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({ Oswald_400Regular });
@@ -28,7 +27,7 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <RestaurantsContext.Provider>
+      <RestaurantsContextProvider>
         <NavigationContainer>
           <Tab.Navigator screenOptions={createScreenOptions}>
             <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
@@ -36,7 +35,7 @@ export default function App() {
             <Tab.Screen name="Settings" component={Settings} />
           </Tab.Navigator>
         </NavigationContainer>
-      </RestaurantsContext.Provider>
+      </RestaurantsContextProvider>
     </ThemeProvider>
   );
 }
