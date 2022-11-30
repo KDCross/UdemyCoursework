@@ -15,6 +15,7 @@ import {
   TAB_ICON,
   Map,
   Settings,
+  ShowHeader
 } from "./src/utils/navigation";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/location.context";
@@ -32,9 +33,9 @@ export default function App() {
         <RestaurantsContextProvider>
           <NavigationContainer>
             <Tab.Navigator screenOptions={createScreenOptions}>
-              <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-              <Tab.Screen name="Map" component={Map} />
-              <Tab.Screen name="Settings" component={Settings} />
+              <Tab.Screen name="Restaurants" component={RestaurantsScreen} options = {{ headerShown: false }} />
+              <Tab.Screen name="Map" component={Map} options = {{ headerShown: false }}  />
+              <Tab.Screen name="Settings" component={Settings} options = {{ headerShown: false }}  />
             </Tab.Navigator>
           </NavigationContainer>
         </RestaurantsContextProvider>

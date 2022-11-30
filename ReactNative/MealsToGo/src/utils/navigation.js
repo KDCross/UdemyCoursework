@@ -27,6 +27,7 @@ export const Settings = () => (
 );
 
 export const createScreenOptions = ({ route }) => {
+  return (screenOptions = { headerShown: false });
   const iconName = TAB_ICON[route.name];
   return {
     tabBarIcon: ({ size, color }) => (
