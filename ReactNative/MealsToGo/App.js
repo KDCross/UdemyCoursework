@@ -6,19 +6,16 @@ import {
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
-import { NavigationContainer } from "@react-navigation/native";
+
 import { theme } from "./src/infrastructure/theme";
-import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
-import {
-  createScreenOptions,
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
+import { TabAppNav,
   Tab,
   TAB_ICON,
   Map,
   Settings,
-  ShowHeader
-} from "./src/utils/navigation";
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
-import { LocationContextProvider } from "./src/services/location/location.context";
+  createScreenOptions } from "./src/infrastructure/navigation/navigation";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({ Oswald_400Regular });
@@ -31,13 +28,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <LocationContextProvider>
         <RestaurantsContextProvider>
-          <NavigationContainer>
-            <Tab.Navigator screenOptions={createScreenOptions}>
-              <Tab.Screen name="Restaurants" component={RestaurantsScreen} options = {{ headerShown: false }} />
-              <Tab.Screen name="Map" component={Map} options = {{ headerShown: false }}  />
-              <Tab.Screen name="Settings" component={Settings} options = {{ headerShown: false }}  />
-            </Tab.Navigator>
-          </NavigationContainer>
+          <TabAppNav />
         </RestaurantsContextProvider>
       </LocationContextProvider>
     </ThemeProvider>

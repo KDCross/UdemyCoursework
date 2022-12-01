@@ -4,7 +4,9 @@ import { ThemeProvider } from "styled-components/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { SafeArea } from "../components/utility/safe-area.component";
+
+import { SafeArea } from "../../components/utility/safe-area.component";
+import { RestaurantsScreen } from "../../features/restaurants/screens/restaurants.screen";
 
 export const Tab = createBottomTabNavigator();
 
@@ -27,7 +29,6 @@ export const Settings = () => (
 );
 
 export const createScreenOptions = ({ route }) => {
-  return (screenOptions = { headerShown: false });
   const iconName = TAB_ICON[route.name];
   return {
     tabBarIcon: ({ size, color }) => (
@@ -35,3 +36,26 @@ export const createScreenOptions = ({ route }) => {
     ),
   };
 };
+
+export const TabAppNav = (() => {
+  return(
+  <NavigationContainer>
+    <Tab.Navigator screenOptions={createScreenOptions}>
+      <Tab.Screen
+        name="Restaurants"
+        component={RestaurantsScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Map"
+        component={Map}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={Settings}
+        options={{ headerShown: false }}
+      />
+    </Tab.Navigator>
+  </NavigationContainer>);
+});
