@@ -13,8 +13,6 @@ import {
   Icon,
 } from "../../restaurants/components/restaurant-info-card.styles";
 
-//import { RestaurantCard } from "./restaurant-cards.js";
-
 export const RestaurantInfo = ({ restaurant = {} }) => {
   const {
     name = "Some Restaurant",
