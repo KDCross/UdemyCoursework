@@ -2,7 +2,7 @@ import React from "react";
 
 import { RestaurantInfo } from "../components/restaurant-info.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { RestaurantMenu } from "../components/restaurant-menus";
+import { RestaurantMenu } from "../components/restaurant-menu";
 
 export const RestaurantDetail = ({ route }) => {
   const { restaurant } = route.params;
