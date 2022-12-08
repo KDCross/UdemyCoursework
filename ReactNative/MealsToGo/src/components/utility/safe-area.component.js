@@ -9,6 +9,13 @@ export const SafeArea = styled.SafeAreaView`
 //their code has "(props) => " in front of the StatusBar.currentHeight bit after margin-top. For some reason, that isn't working for me, but if I remove the props call, it works fine.
 
 export const SearchContainer = styled.View`
-  background-color: ${(props) => props.theme.colors.bg.primary};
   padding: ${(props) => props.theme.space[3]};
+`;
+
+export const MapSearchContainer = styled.View`
+  padding: ${(props) => props.theme.space[3]};
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
+  position: absolute;
+  z-index: 999;
+  width: 100%
 `;

@@ -44,3 +44,22 @@ export const MapScreen = () => {
     </>
   );
 };
+
+  return (
+    <>
+      <Search />
+      <Map
+        region={{
+          latitude: lat,
+          longitude: lng,
+          latitudeDelta: latDelta,
+          longitudeDelta: 0.02,
+        }}
+      >
+        {restaurants.map((restaurant) => {
+          return null;
+        })}
+      </Map>
+    </>
+  );
+};
