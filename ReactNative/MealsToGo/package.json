@@ -33,6 +33,7 @@
     "react-native-screens": "~3.15.0",
     "react-native-svg": "12.3.0",
     "react-native-web": "~0.18.7",
+    "react-native-webview": "11.23.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
@@ -40,7 +41,8 @@
     "@react-native-community/eslint-config": "^3.1.0",
     "@types/styled-components": "^5.1.26",
     "eslint": "^8.25.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "yarn-audit-fix": "^9.3.7"
   },
   "private": true
 }
