@@ -12,6 +12,7 @@ import {
   OpenNow,
   Icon,
 } from "../../restaurants/components/restaurant-info-card.styles";
+import { Favorite } from "../../../components/favorites/favorite.component";
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
   const {
@@ -31,6 +32,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
 
   return (
     <RestaurantCard>
+      <Favorite restaurant={restaurant} />
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Spacer position="padding" size="large">
         <Text variant="label" size="title">
