@@ -8,7 +8,7 @@ import { RestaurantsContext } from "../../../services/restaurants/restaurants.co
 import { FavoritesContext } from "../../../services/favorites/favorites.context";
 import { LoadingIndicator } from "../../../components/utility/activity.indicator";
 import { Search } from "../components/search.component";
-import { FavoritesBar } from "../../../services/favorites/favorites-bar.component";
+import { FavoritesBar } from "../../favorites/favorites-bar.component";
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, restaurants, error } = useContext(RestaurantsContext);
