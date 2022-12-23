@@ -11,7 +11,7 @@ export const FavoritesBar = ({ favorites, onNavigate }) => {
     return null;
   }
     return (
-    <Spacer variant="padding.large">
+    <Spacer position="padding" size="large">
       <Spacer position="left" size="large">
         <Text variant="caption">Favorites</Text>
       </Spacer>
