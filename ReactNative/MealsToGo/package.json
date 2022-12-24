@@ -42,6 +42,7 @@
     "@babel/core": "^7.12.9",
     "@react-native-community/eslint-config": "^3.1.0",
     "@types/styled-components": "^5.1.26",
+    "@types/styled-components-react-native": "^5.2.0",
     "eslint": "^8.25.0",
     "prettier": "^2.7.1",
     "yarn-audit-fix": "^9.3.7"
