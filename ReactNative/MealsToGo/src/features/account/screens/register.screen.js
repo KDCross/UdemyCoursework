@@ -11,12 +11,13 @@ import {
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import { LoadingIndicator } from "../../../components/utility/activity.indicator";
 
 export const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatedPassword, setRepeatedPassword] = useState("");
-  const { error, onRegister } = useContext(AuthenticationContext);
+  const { error, isLoading, onRegister } = useContext(AuthenticationContext);
 
   return (
     <AccountBackground>
@@ -42,7 +43,7 @@ export const RegisterScreen = ({ navigation }) => {
           autoCapitalize="none"
           onChangeText={(p) => setPassword(p)}
         />
-                <AuthInput
+        <AuthInput
           label="Repeat Password"
           value={repeatedPassword}
           mode="outlined"
@@ -57,13 +58,17 @@ export const RegisterScreen = ({ navigation }) => {
           </Spacer>
         )}
         <Spacer position="padding" size="medium" />
-        <AuthButton
-          icon="account-plus"
-          mode="contained"
-          onPress={() => onRegister(email, password, repeatedPassword)}
-        >
-          Register
-        </AuthButton>
+        {!isLoading ? (
+          <AuthButton
+            icon="account-plus"
+            mode="contained"
+            onPress={() => onRegister(email, password, repeatedPassword)}
+          >
+            Register
+          </AuthButton>
+        ) : (
+          <LoadingIndicator />
+        )}
       </AccountContainer>
       <Spacer position="padding" size="large" />
       <AuthButton

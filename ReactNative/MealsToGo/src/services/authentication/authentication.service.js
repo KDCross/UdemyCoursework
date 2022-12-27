@@ -2,6 +2,7 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 
 export const loginRequest = (email, password) => {
@@ -16,17 +17,13 @@ export const loginRequest = (email, password) => {
   });
 };
 
-export const registerRequest = (email, password) => {
+export const logoutRequest = () => {
   const auth = getAuth();
-
-  return new Promise((resolve, reject) =>
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      })
-  );
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+    })
+    .catch((error) => {
+      // An error happened.
+    });
 };

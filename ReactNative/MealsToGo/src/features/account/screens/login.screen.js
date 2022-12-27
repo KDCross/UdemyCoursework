@@ -11,11 +11,12 @@ import {
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import { LoadingIndicator } from "../../../components/utility/activity.indicator";
 
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { error, onLogin } = useContext(AuthenticationContext);
+  const { error, isLoading, onLogin } = useContext(AuthenticationContext);
 
   return (
     <AccountBackground>
@@ -47,13 +48,17 @@ export const LoginScreen = ({ navigation }) => {
           </Spacer>
         )}
         <Spacer position="padding" size="medium" />
-        <AuthButton
-          icon="account-lock-open"
-          mode="contained"
-          onPress={() => onLogin(email, password)}
-        >
-          Login
-        </AuthButton>
+        {!isLoading ? (
+          <AuthButton
+            icon="account-lock-open"
+            mode="contained"
+            onPress={() => onLogin(email, password)}
+          >
+            Login
+          </AuthButton>
+        ) : (
+          <LoadingIndicator />
+        )}
       </AccountContainer>
       <Spacer position="padding" size="large" />
       <AuthButton
