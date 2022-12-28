@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -9,6 +9,9 @@ import { MapScreen } from "../../features/map/screens/map.screen";
 
 import { AuthButton } from "../../features/account/components/account.styles";
 import { AuthenticationContext } from "../../services/authentication/authentication.context";
+import { FavoritesContextProvider } from "../../services/favorites/favorites.context";
+import { LocationContextProvider } from "../../services/location/location.context";
+import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
 
 export const Tab = createBottomTabNavigator();
 
@@ -39,24 +42,28 @@ export const createScreenOptions = ({ route }) => {
   };
 };
 
-export const TabAppNav = () => {
-  return (
-    <Tab.Navigator screenOptions={createScreenOptions}>
-      <Tab.Screen
-        name="Restaurants"
-        component={RestaurantsNavigator}
-        options={{ headerShown: false }}
-      />
-      <Tab.Screen
-        name="Map"
-        component={MapScreen}
-        options={{ headerShown: false }}
-      />
-      <Tab.Screen
-        name="Settings"
-        component={Settings}
-        options={{ headerShown: false }}
-      />
-    </Tab.Navigator>
-  );
-};
+export const TabAppNav = () => (
+  <FavoritesContextProvider>
+    <LocationContextProvider>
+      <RestaurantsContextProvider>
+        <Tab.Navigator screenOptions={createScreenOptions}>
+          <Tab.Screen
+            name="Restaurants"
+            component={RestaurantsNavigator}
+            options={{ headerShown: false }}
+          />
+          <Tab.Screen
+            name="Map"
+            component={MapScreen}
+            options={{ headerShown: false }}
+          />
+          <Tab.Screen
+            name="Settings"
+            component={Settings}
+            options={{ headerShown: false }}
+          />
+        </Tab.Navigator>
+      </RestaurantsContextProvider>
+    </LocationContextProvider>
+  </FavoritesContextProvider>
+);

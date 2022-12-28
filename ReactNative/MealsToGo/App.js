@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import {
   useFonts as useOswald,
@@ -7,17 +6,9 @@ import {
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
 
 import { theme } from "./src/infrastructure/theme";
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
-import { LocationContextProvider } from "./src/services/location/location.context";
 import { Navigation } from "./src/infrastructure/navigation/index";
-import { FavoritesContextProvider } from "./src/services/favorites/favorites.context";
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 
 const firebaseConfig = {
@@ -43,13 +34,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <AuthenticationContextProvider>
-        <FavoritesContextProvider>
-          <LocationContextProvider>
-            <RestaurantsContextProvider>
-              <Navigation />
-            </RestaurantsContextProvider>
-          </LocationContextProvider>
-        </FavoritesContextProvider>
+        <Navigation />
       </AuthenticationContextProvider>
     </ThemeProvider>
   );

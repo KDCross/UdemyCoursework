@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { TextInput } from "react-native-paper";
 
 import {
   AccountBackground,
