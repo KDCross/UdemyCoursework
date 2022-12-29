@@ -1,20 +1,20 @@
 import React from "react";
-import { Button } from "react-native-paper";
 
 import {
   AccountBackground,
   AccountContainer,
   AccountCover,
   AuthButton,
+  StyledLottieView,
 } from "../components/account.styles";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 
-
-export const AccountScreen = ({navigation}) => {
+export const AccountScreen = ({ navigation }) => {
   return (
     <AccountBackground>
       <AccountCover />
+      <StyledLottieView />
       <Text variant="title">Meals To Go</Text>
       <AccountContainer>
         <AuthButton

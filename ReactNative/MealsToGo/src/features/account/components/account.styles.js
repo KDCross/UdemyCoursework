@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components/native";
 import { Button, TextInput } from "react-native-paper";
+import LottieView from "lottie-react-native";
 
 import { colors } from "../../../infrastructure/theme/colors";
-import { Text } from "../../../components/typography/text.component";
 
 export const AccountBackground = styled.ImageBackground.attrs({
   source: require("../../../../assets/home_bg.jpg"),
@@ -38,4 +38,17 @@ export const AccountTitle = styled.Text`
     font-family: ${(props) => props.theme.fonts.heading};
     font-size: ${(props) => props.theme.fontSizes.h5};
     font-weight: ${(props) => props.theme.fontWeights.bold};
+`;
+
+export const StyledLottieView = styled(LottieView).attrs({
+  key: "animation",
+  autoPlay: true,
+  loop: true,
+  resizeMode: "cover",
+  source: require("../../../../assets/watermelon.json")
+})`
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  top:  ${(props) => props.theme.space[4]};
 `;
