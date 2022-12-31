@@ -4,6 +4,8 @@ import { FlatList, TouchableOpacity } from "react-native";
 import { RestaurantInfo } from "../components/restaurant-info.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
+import { FadeInView } from "../../../components/animations/fade.animation";
+
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { FavoritesContext } from "../../../services/favorites/favorites.context";
 import { LoadingIndicator } from "../../../components/utility/activity.indicator";
@@ -12,7 +14,7 @@ import { FavoritesBar } from "../../favorites/favorites-bar.component";
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, restaurants, error } = useContext(RestaurantsContext);
-  const {favorites} = useContext(FavoritesContext);
+  const { favorites } = useContext(FavoritesContext);
   const [isToggled, setIsToggled] = useState(false);
 
   return (
@@ -21,7 +23,9 @@ export const RestaurantsScreen = ({ navigation }) => {
         isFavoritesToggled={isToggled}
         onFavoritesToggle={() => setIsToggled(!isToggled)}
       />
-      {isToggled && <FavoritesBar favorites={favorites} onNavigate={navigation.navigate} />}
+      {isToggled && (
+        <FavoritesBar favorites={favorites} onNavigate={navigation.navigate} />
+      )}
       {isLoading && <LoadingIndicator />}
       <FlatList
         data={restaurants}
@@ -34,9 +38,11 @@ export const RestaurantsScreen = ({ navigation }) => {
                 })
               }
             >
-              <Spacer position="padding" size="medium">
-                <RestaurantInfo restaurant={item} />
-              </Spacer>
+              <FadeInView>
+                <Spacer position="padding" size="medium">
+                  <RestaurantInfo restaurant={item} />
+                </Spacer>
+              </FadeInView>
             </TouchableOpacity>
           );
         }}
