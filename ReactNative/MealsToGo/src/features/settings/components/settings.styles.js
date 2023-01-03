@@ -9,7 +9,7 @@ export const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-export const AvatarImage = styled(Avatar.Icon).attrs({
+export const AvatarIcon = styled(Avatar.Icon).attrs({
   backgroundColor: colors.bg.primary,
   size: 180,
   icon: "human",
@@ -31,7 +31,7 @@ export const ProfileCamera = styled(Camera)`
   height: 100%
 `;
 
-export const GetPermission = styled.View`
+export const GetPermission = styled(SafeArea)`
 align-items: center;
 justify-content: center;
 `;

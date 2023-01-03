@@ -1,20 +1,27 @@
+import React, { useContext, useRef, useState } from "react";
 import { Camera, CameraType } from "expo-camera";
-import { useRef, useState } from "react";
-import { Button, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Button, TouchableOpacity } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import { Text } from "../../../components/typography/text.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { ProfileCamera, NoPermission } from "../components/settings.styles";
+import { Text } from "../../../components/typography/text.component";
+import { ProfileCamera, GetPermission } from "../components/settings.styles";
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
-export const CameraScreen = () => {
+export const CameraScreen = ({navigation}) => {
   const [type] = useState(CameraType.back);
   const [permission, requestPermission] = Camera.useCameraPermissions();
-  const [isCameraReady, setIsCameraReady] = useState(false);
+  const [isCameraReady,setIsCameraReady] = useState(false);
   const cameraRef = useRef();
+  const { user } = useContext(AuthenticationContext);
 
   if (!permission) {
     // Camera permissions are still loading
-    return <GetPermission />;
+    return (
+      <SafeArea>
+        <GetPermission />
+      </SafeArea>
+    );
   }
 
   if (!permission.granted) {
@@ -34,23 +41,18 @@ export const CameraScreen = () => {
   const snap = async () => {
     if (cameraRef.current) {
       const photo = await cameraRef.current.takePictureAsync();
-      console.log(photo);
-      const source = data.uri;
-      if (source) {
-        await cameraRef.current.pausePreview();
-        setIsPreview(true);
-        console.log("picture", source);
-      }
+      AsyncStorage.setItem(`${user.uid}-photo`, photo.uri);
+      navigation.goBack();
     }
   };
 
   return (
-      <TouchableOpacity onPress={snap}>
-        <ProfileCamera
-          ref={(cam) => (cameraRef.current = cam)}
-          type={type}
-          onCameraReady={onCameraReady}
-        />
-        </TouchableOpacity>
+    <TouchableOpacity onPress={snap}>
+      <ProfileCamera
+        ref={(cam) => (cameraRef.current = cam)}
+        type={type}
+        onCameraReady={onCameraReady}
+      />
+    </TouchableOpacity>
   );
 };
