@@ -20,7 +20,7 @@ export const SettingsNavigator = ({ route, navigation }) => {
     >
       <SettingsStack.Screen
         options={{ headerShown: false }}
-        name="Settings"
+        name="Settings Screen"
         component={SettingsScreen}
       />
       <SettingsStack.Screen

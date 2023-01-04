@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { TouchableOpacity } from "react-native";
 import { List } from "react-native-paper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
