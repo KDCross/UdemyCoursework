@@ -1,18 +1,18 @@
 import React from "react";
 
 import {
-  AccountBackground,
   AccountContainer,
   AccountCover,
   AuthButton,
   StyledLottieView,
 } from "../components/account.styles";
+import { BackgroundScreen } from "../../../components/utility/background-screen";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 
 export const AccountScreen = ({ navigation }) => {
   return (
-    <AccountBackground>
+    <BackgroundScreen>
       <AccountCover />
       <StyledLottieView />
       <Text variant="title">Meals To Go</Text>
@@ -33,6 +33,6 @@ export const AccountScreen = ({ navigation }) => {
           Register
         </AuthButton>
       </AccountContainer>
-    </AccountBackground>
+    </BackgroundScreen>
   );
 };

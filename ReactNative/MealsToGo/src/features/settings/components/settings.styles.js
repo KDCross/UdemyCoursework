@@ -7,6 +7,7 @@ import { SafeArea } from "../../../components/utility/safe-area.component";
 
 export const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space[3]};
+  background-color: rgba(255,255,255,0.4);
 `;
 
 export const AvatarIcon = styled(Avatar.Icon).attrs({

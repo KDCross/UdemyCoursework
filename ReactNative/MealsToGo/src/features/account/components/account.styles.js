@@ -5,14 +5,6 @@ import LottieView from "lottie-react-native";
 
 import { colors } from "../../../infrastructure/theme/colors";
 
-export const AccountBackground = styled.ImageBackground.attrs({
-  source: require("../../../../assets/home_bg.jpg"),
-})`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const AccountCover = styled.View`
   position: absolute;
   width: 100%

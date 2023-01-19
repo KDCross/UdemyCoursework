@@ -1,0 +1,85 @@
+[debug] [2023-01-19T13:03:36.586Z] ----------------------------------------------------------------------
+[debug] [2023-01-19T13:03:36.588Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Beast\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2023-01-19T13:03:36.588Z] CLI Version:   11.19.0
+[debug] [2023-01-19T13:03:36.588Z] Platform:      win32
+[debug] [2023-01-19T13:03:36.588Z] Node Version:  v16.17.0
+[debug] [2023-01-19T13:03:36.590Z] Time:          Thu Jan 19 2023 07:03:36 GMT-0600 (Central Standard Time)
+[debug] [2023-01-19T13:03:36.590Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-19T13:03:36.694Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-19T13:03:36.694Z] > authorizing via signed-in user (securitysix@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2023-01-19T13:03:36.709Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-01-19T13:03:36.710Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-01-19T13:03:36.715Z] [hub] writing locator at C:\Users\Beast\AppData\Local\Temp\hub-mealstogo-5851d.json
+[debug] [2023-01-19T13:03:36.738Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-01-19T13:03:36.738Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-01-19T13:03:36.738Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2023-01-19T13:03:36.780Z] defaultcredentials: writing to file C:\Users\Beast\AppData\Roaming\firebase\securitysix_gmail_com_application_default_credentials.json
+[debug] [2023-01-19T13:03:36.783Z] Setting GAC to C:\Users\Beast\AppData\Roaming\firebase\securitysix_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Beast\\AppData\\Roaming\\firebase\\securitysix_gmail_com_application_default_credentials.json"}}
+[debug] [2023-01-19T13:03:36.786Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5851d/adminSdkConfig [none]
+[debug] [2023-01-19T13:03:37.205Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5851d/adminSdkConfig 200
+[debug] [2023-01-19T13:03:37.205Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5851d/adminSdkConfig {"projectId":"mealstogo-5851d","storageBucket":"mealstogo-5851d.appspot.com"}
+[debug] [2023-01-19T13:03:37.221Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-01-19T13:03:37.221Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-01-19T13:03:37.221Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\Beast\\.cache\\firebase\\emulators\\ui-v1.11.1\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\Beast\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.1\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-01-19T13:03:37.381Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-01-19T13:03:37.382Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "C:\Udemy\UdemyCoursework\ReactNative\mealstogo\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Udemy\\UdemyCoursework\\ReactNative\\mealstogo\\functions\" for Cloud Functions..."}}
+[debug] [2023-01-19T13:03:37.502Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2023-01-19T13:03:39.669Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-01-19T13:03:39.669Z] Building nodejs source
+[debug] [2023-01-19T13:03:39.671Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-01-19T13:03:40.145Z] Serving at port 9005
+
+[debug] [2023-01-19T13:03:40.323Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"},"geocode":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"geocode"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-01-19T13:03:40.335Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: helloWorld, geocode. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld, geocode."}}
+[info] +  functions[us-central1-helloWorld]: http function initialized (http://127.0.0.1:5001/mealstogo-5851d/us-central1/helloWorld). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/mealstogo-5851d/us-central1/helloWorld)."}}
+[info] +  functions[us-central1-geocode]: http function initialized (http://127.0.0.1:5001/mealstogo-5851d/us-central1/geocode). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/mealstogo-5851d/us-central1/geocode)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 

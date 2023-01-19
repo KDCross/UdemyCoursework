@@ -9,6 +9,7 @@ import { SettingsNavigator } from "./settings.navigator";
 import { FavoritesContextProvider } from "../../services/favorites/favorites.context";
 import { LocationContextProvider } from "../../services/location/location.context";
 import { RestaurantsContextProvider } from "../../services/restaurants/restaurants.context";
+import { colors } from "../theme/colors";
 
 export const Tab = createBottomTabNavigator();
 
@@ -35,17 +36,29 @@ export const TabAppNav = () => (
           <Tab.Screen
             name="Restaurants"
             component={RestaurantsNavigator}
-            options={{ headerShown: false }}
+            options={{
+              headerShown: false,
+              tabBarActiveTintColor: colors.brand.primary,
+              tabBarInactiveTintColor: colors.brand.muted,
+            }}
           />
           <Tab.Screen
             name="Map"
             component={MapScreen}
-            options={{ headerShown: false }}
+            options={{
+              headerShown: false,
+              tabBarActiveTintColor: colors.brand.primary,
+              tabBarInactiveTintColor: colors.brand.muted,
+            }}
           />
           <Tab.Screen
             name="Settings"
             component={SettingsNavigator}
-            options={{ headerShown: false }}
+            options={{
+              headerShown: false,
+              tabBarActiveTintColor: colors.brand.primary,
+              tabBarInactiveTintColor: colors.brand.muted,
+            }}
           />
         </Tab.Navigator>
       </RestaurantsContextProvider>

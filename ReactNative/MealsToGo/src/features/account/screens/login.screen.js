@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 
 import {
-  AccountBackground,
   AccountContainer,
   AccountCover,
   AuthButton,
   AuthInput,
 } from "../components/account.styles";
+import { BackgroundScreen } from "../../../components/utility/background-screen";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
@@ -18,7 +18,7 @@ export const LoginScreen = ({ navigation }) => {
   const { error, isLoading, onLogin } = useContext(AuthenticationContext);
 
   return (
-    <AccountBackground>
+    <BackgroundScreen>
       <AccountCover />
       <Text variant="title">Meals To Go</Text>
       <AccountContainer>
@@ -67,6 +67,6 @@ export const LoginScreen = ({ navigation }) => {
       >
         Back
       </AuthButton>
-    </AccountBackground>
+    </BackgroundScreen>
   );
 };
