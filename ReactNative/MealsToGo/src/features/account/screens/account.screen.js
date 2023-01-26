@@ -9,9 +9,11 @@ import {
 import { BackgroundScreen } from "../../../components/utility/background-screen";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
+import { SafeArea } from "../../../components/utility/safe-area.component";
 
 export const AccountScreen = ({ navigation }) => {
   return (
+    <SafeArea>
     <BackgroundScreen>
       <AccountCover />
       <StyledLottieView />
@@ -34,5 +36,6 @@ export const AccountScreen = ({ navigation }) => {
         </AuthButton>
       </AccountContainer>
     </BackgroundScreen>
+    </SafeArea>
   );
 };
