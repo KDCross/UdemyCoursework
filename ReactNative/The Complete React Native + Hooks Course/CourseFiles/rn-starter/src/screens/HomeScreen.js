@@ -2,7 +2,7 @@ import React from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 
 const HomeScreen = ({navigation}) => {
-  //The exercise was to change the text from "HomeScreen." The course used "Hi There." I went a different direction because in this case, the actual text is less important than the exercise of
+  //An early exercise was to change the text from "HomeScreen." The course used "Hi There." I went a different direction because in this case, the actual text is less important than the exercise of
   //changing the text.
   return (
     <View>
@@ -18,6 +18,18 @@ const HomeScreen = ({navigation}) => {
       <Button
       title="Go to Image Demo"
       onPress={() => navigation.navigate("Image")}
+    />
+    <Button
+      title="Go to Counter Demo"
+      onPress={() => navigation.navigate("Counter")}
+    />
+    <Button
+      title="Go to Color Demo"
+      onPress={() => navigation.navigate("Color")}
+    />
+      <Button
+      title="Go to Square Demo"
+      onPress={() => navigation.navigate("Square")}
     />
     </View>
   );
