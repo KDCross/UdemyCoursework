@@ -9,6 +9,7 @@ import { ColorScreen } from "./src/screens/ColorScreen";
 import { SquareScreen } from "./src/screens/SquareScreen";
 import { ReducerCounterScreen } from "./src/screens/ReducerCounterScreen";
 import { ReducerSquareScreen } from "./src/screens/ReducerSquareScreen";
+import { TextScreen } from "./src/screens/TextScreen";
 
 const navigator = createStackNavigator(
   {
@@ -21,6 +22,7 @@ const navigator = createStackNavigator(
     Square: SquareScreen,
     ReduceCounter: ReducerCounterScreen,
     ReduceSquare: ReducerSquareScreen,
+    Text: TextScreen,
   },
   {
     initialRouteName: "Home",
