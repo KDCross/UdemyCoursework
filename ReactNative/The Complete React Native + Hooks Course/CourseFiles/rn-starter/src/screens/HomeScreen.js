@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 
-const HomeScreen = ({navigation}) => {
+export const HomeScreen = ({navigation}) => {
   //An early exercise was to change the text from "HomeScreen." The course used "Hi There." I went a different direction because in this case, the actual text is less important than the exercise of
   //changing the text.
   return (
@@ -43,6 +43,14 @@ const HomeScreen = ({navigation}) => {
       title="Go to Text Demo"
       onPress={() => navigation.navigate("Text")}
     />
+    <Button
+      title="Go to Box Demo"
+      onPress={() => navigation.navigate("Box")}
+    />
+    <Button
+      title="Go to FlexBox Demo"
+      onPress={() => navigation.navigate("FlexBox")}
+    />
     </View>
     
   );
@@ -57,5 +65,3 @@ const styles = StyleSheet.create({
     color: "blue",
   },
 });
-
-export default HomeScreen;

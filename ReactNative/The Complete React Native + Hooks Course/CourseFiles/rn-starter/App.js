@@ -1,6 +1,6 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import HomeScreen from "./src/screens/HomeScreen";
+import { HomeScreen } from "./src/screens/HomeScreen";
 import { ComponentsScreen } from "./src/screens/ComponentsScreen";
 import { ListScreen } from "./src/screens/ListScreen";
 import { ImageScreen } from "./src/screens/ImageScreen";
@@ -10,6 +10,8 @@ import { SquareScreen } from "./src/screens/SquareScreen";
 import { ReducerCounterScreen } from "./src/screens/ReducerCounterScreen";
 import { ReducerSquareScreen } from "./src/screens/ReducerSquareScreen";
 import { TextScreen } from "./src/screens/TextScreen";
+import { BoxScreen } from "./src/screens/BoxScreen";
+import { FlexBoxScreen } from "./src/screens/FlexBoxScreen";
 
 const navigator = createStackNavigator(
   {
@@ -23,6 +25,8 @@ const navigator = createStackNavigator(
     ReduceCounter: ReducerCounterScreen,
     ReduceSquare: ReducerSquareScreen,
     Text: TextScreen,
+    Box: BoxScreen,
+    FlexBox: FlexBoxScreen,
   },
   {
     initialRouteName: "Home",
