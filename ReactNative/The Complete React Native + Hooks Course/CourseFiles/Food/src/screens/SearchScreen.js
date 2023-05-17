@@ -2,39 +2,39 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import { SearchBar } from "../components/SearchBar";
-import yelp from "../api/yelp";
+import { ResultsList } from "../components/ResultsList";
+import useYelpApi from "../hooks/useYelpApi";
 
 export const SearchScreen = () => {
   const [term, setTerm] = useState("");
-  const [results, setResults] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [searchApi, results, errorMessage] = useYelpApi();
 
-  const searchApi = async (searchTerm) => {
-    console.log("Hi there!");
-    try {
-      const response = await yelp.get("/search", {
-        params: {
-          limit: 50,
-          term: searchTerm,
-          location: "san jose",
-        },
-      });
-      setResults(response.data.businesses);
-    } catch (e) {
-      setErrorMessage("Something went wrong.");
-    }
+  const filterResultsByPrice = (price) => {
+    //price === "$" || "$$" || "$$$"
+    return results.filter((result) => {
+      return result.price === price;
+    });
   };
-
-  //Call searchApi when component first rendered to give a default result.
-  //Done as example in course to show why it's bad practice.
-  //searchApi("pasta");
-  //This creates an infinite loop by running the searchApi constantly.
 
   return (
     <View style={styles.background}>
-      <SearchBar term={term} onTermChange={setTerm} onTermSubmit={() => searchApi(term)} />
+      <SearchBar
+        term={term}
+        onTermChange={setTerm}
+        onTermSubmit={() => searchApi(term)}
+      />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <Text>We have found {results.length} results.</Text>
+      <ResultsList
+        header="Cost Effective"
+        results={filterResultsByPrice("$")}
+      />
+      <ResultsList header="Bit Pricier" results={filterResultsByPrice("$$")} />
+      <ResultsList header="Big Spender" results={filterResultsByPrice("$$$")} />
+      <ResultsList
+        header="Stupid Expensive"
+        results={filterResultsByPrice("$$$$")}
+      />
     </View>
   );
 };
