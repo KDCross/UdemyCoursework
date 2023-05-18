@@ -22,10 +22,12 @@ export const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
 const styles = StyleSheet.create({
   backgroundStyle: {
     flexDirection: "row",
-    backgroundColor: "#F0EEEE",
+    backgroundColor: "white",
     height: 50,
     borderRadius: 5,
-    marginTop: 10,
+    marginTop: 8,
+    marginHorizontal: 16,
+    marginBottom: 8,
   },
   iconStyle: {
     fontSize: 35,
@@ -37,5 +39,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     flex: 1,
     fontSize: 18,
+    borderRadius: 4,
   },
 });
