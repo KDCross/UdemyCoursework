@@ -1,14 +1,22 @@
-import React, { createContext } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import createDataContext from "./createDataContext";
 
-export const BlogContext = createContext();
-
-export const BlogProvider = ({ children }) => {
-  const blogPosts = [{ title: "Blog Post #1" }, { title: "Blog Post #2" }];
-
-  return (
-    <BlogContext.Provider value={blogPosts}>
-        {children}
-    </BlogContext.Provider>
-  );
+const blogReducer = (state, action) => {
+  switch (action.type) {
+    case "add_blogpost":
+      return [...state, { title: `Blog Post #${state.length + 1}` }];
+    default:
+      return state;
+  }
 };
+
+const addBlogPost = dispatch => {
+  return () => {
+    dispatch({ type: "add_blogpost" });
+  };
+};
+
+export const { Context, Provider } = createDataContext(
+  blogReducer,
+  { addBlogPost },
+  []
+);
