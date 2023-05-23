@@ -1,22 +1,15 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { Feather, EvilIcons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { CreateScreen } from "../screens/CreateScreen";
+import { EditScreen } from "../screens/EditScreen";
 import { IndexScreen } from "../screens/IndexScreen";
 import { ShowScreen } from "../screens/ShowScreen";
 
 const Stack = createNativeStackNavigator();
-
-const createPost = (navigation) => {
-  return (
-    <TouchableOpacity onPress={() => navigation.navigate("Create")}>
-      <Ionicons name="add-outline" size={30} color="black" />
-    </TouchableOpacity>
-  );
-};
 
 export const AppNavigation = () => {
   return (
@@ -34,8 +27,24 @@ export const AppNavigation = () => {
             ),
           })}
         />
-        <Stack.Screen name="Show" component={ShowScreen} />
+        <Stack.Screen
+          name="Show"
+          component={ShowScreen}
+          options={({ navigation, route }) => ({
+            headerTitle: "Show Blog Post",
+            headerRight: () => (
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Edit", { id: route.params.id })
+                }
+              >
+                <EvilIcons name="pencil" size={35} />
+              </TouchableOpacity>
+            ),
+          })}
+        />
         <Stack.Screen name="Create" component={CreateScreen} />
+        <Stack.Screen name="Edit" component={EditScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
