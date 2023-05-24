@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   Button,
   FlatList,
@@ -12,7 +12,12 @@ import { Feather } from "@expo/vector-icons";
 import { Context } from "../context/BlogContext";
 
 export const IndexScreen = ({ navigation }) => {
-  const { state, deleteBlogPost } = useContext(Context);
+  const { state, deleteBlogPost, getBlogPosts } = useContext(Context);
+
+  useEffect(() => {
+    getBlogPosts();
+  }, []);
+
 
   return (
     <View>
@@ -36,6 +41,7 @@ export const IndexScreen = ({ navigation }) => {
               </View>
             </TouchableOpacity>
           );
+          console.log(blogPost);
         }}
       />
     </View>
