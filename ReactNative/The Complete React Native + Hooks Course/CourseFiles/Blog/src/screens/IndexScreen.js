@@ -41,7 +41,6 @@ export const IndexScreen = ({ navigation }) => {
               </View>
             </TouchableOpacity>
           );
-          console.log(blogPost);
         }}
       />
     </View>
