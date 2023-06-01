@@ -1,9 +1,29 @@
 {
   "blogposts": [
     {
-      "id": 1,
       "title": "API POST",
-      "content": "content for my post"
+      "content": "This is a default post that was added for testing purposes during the course of the course.",
+      "id": 1
+    },
+    {
+      "title": "New Post",
+      "content": "Test Content",
+      "id": 2
+    },
+    {
+      "title": "New Test Post",
+      "content": "Second Test Post",
+      "id": 3
+    },
+    {
+      "title": "Another New test Post",
+      "content": "Blah blah blah",
+      "id": 4
+    },
+    {
+      "title": "Yet Another Test Post",
+      "content": "Mister Testy McTestFace",
+      "id": 5
     }
   ]
 }

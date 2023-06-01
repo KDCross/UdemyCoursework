@@ -16,8 +16,9 @@ export const IndexScreen = ({ navigation }) => {
 
   useEffect(() => {
     getBlogPosts();
-  }, []);
 
+    return navigation.addListener("focus", () => getBlogPosts());
+  }, []);
 
   return (
     <View>
