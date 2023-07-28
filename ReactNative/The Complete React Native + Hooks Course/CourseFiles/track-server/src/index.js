@@ -1,14 +1,17 @@
 require("./models/user");
+require("./models/track");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/authRoutes.js");
+const trackRoutes = require("./routes/trackRoutes.js");
 const requireAuth = require("./middlewares/requireAuth");
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(authRoutes);
+app.use(trackRoutes);
 
 const mongoUri = "mongodb+srv://kennethdcross:389zlNAe0KkRl38o@cluster0.iiwqvhz.mongodb.net/"
 mongoose.connect(mongoUri);
